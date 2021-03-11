@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+<meta charset="UTF-8">
+<title>Home</title>
+
+<link rel="stylesheet" 
+href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
+integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" 
+crossorigin="anonymous">
+</head>
+<body>
+	<nav class = "navbar navbar-inverse navbar-fixed-top">
+		<div class= "container">
+			<div class = "navbar-header">
+				<button type="button" class="navbar-toggle collapsed"
+				data-toggle = "collapse" data-target = "#navbar" aria-expanded = "false"
+				aria-controls = "navbar">
+				<span class = "sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class ="icn-bar"></span>
+				</button>
+				<table style="width:200%; table-layout: fixed; color:white">
+				<tr>
+				<td>
+				<a class="navbar-brand" href="#" th:href="@{/}">Redirection Page</a>
+				</td>
+				<td>
+<!-- 				//<span sec:authentication="principal.username">User</span> -->
+				<div id="navbar" class="collapse navbar-collapse">
+					<ul class="nav navbar-nav">
+						<li sec:authorize="isAuthenticated()"><a th:href = "@{/logout}">logout</a>
+					</ul>
+				
+				</div>
+				
+				</td>
+				</tr>
+				</table>
+			</div>
+		</div>
+		</nav>
+		<br>
+		<br>
+		
+		<div class = "container">
+			<h1>We are happy that you're here</h1>
+			
+			<table style="width:100%; table-layout: fixed;">
+				<tr>
+					<td><h4><a th:href="@{/condidat}">Complete Registration</a></h4>
+					</td>
+					<td><h4><a th:href="@{/recruteur}">Create new offer</a></h4>
+					</td>
+				</tr>
+				
+			</table>
+		
+		</div>
+
+</body>
+</html>
