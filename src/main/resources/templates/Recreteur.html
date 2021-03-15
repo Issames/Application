@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Completer Votre Profile</title>
+<link rel = "stylesheet" type = "text/css" href="/webjars/bootstrap/css/bootstrap.min.css"/>
+
+</head>
+<body>
+			
+	<div class = "container text-center">
+		<div>
+					<h1>Bienvenu </h1>
+		</div>
+		
+		 
+			<form th:action="@{/save_recruiter}" method="post"
+				
+				th:object="${recruiter}" enctype="multipart/form-data">
+	<!-- Recupérer User id  -->
+				<input name="id_user" type="hidden" th:value="${param.id}">
+				 
+				
+				  
+				<div class = "m-3" >
+				
+					<div class="form-group row">
+						<label class="col-form-label col-1">Nom de Societe</label>
+						<div class="col-5">
+							<input type="text" class="form-control" th:field ="*{company_name}" required 
+							th:minlength ="6"  th:maxlength = "50"/>
+						</div>	
+ 					</div>
+ 					<div class="form-group row">
+						<label class="col-form-label col-1">Specialité</label>
+						<div class="col-5">
+							<input type="text" class="form-control" th:field="*{company_speciality}" required 
+							th:minlength ="6"  th:maxlength = "50"/>
+						</div>	
+ 					</div>
+ 					<div class="form-group row">
+						<label class="col-form-label col-1">URL</label>
+						<div class="col-5">
+							<input type="text" class="form-control" th:field="*{company_url}" required 
+							th:minlength ="6"  th:maxlength = "50"/>
+						</div>	
+ 					</div>
+ 					<div class="form-group row">
+						<label class="col-form-label col-1">First name</label>
+						<div class="col-5">
+							<input type="text" class="form-control" th:field="*{recruiter_firstname}" required 
+							th:minlength ="6"  th:maxlength = "50"/>
+						</div>	
+ 					</div>
+ 					<div class="form-group row">
+						<label class="col-form-label col-1">last name</label>
+						<div class="col-5">
+							<input type="text" class="form-control" th:field="*{recruiter_lastname}" required 
+							th:minlength ="6"  th:maxlength = "50"/>
+						</div>	
+ 					</div>
+ 					<div class="form-group row">
+						<label class="col-form-label col-1">phone</label>
+						<div class="col-5">
+							<input type="text" class="form-control" th:field="*{recruiter_phone}" required 
+							th:minlength ="6"  th:maxlength = "50"/>
+						</div>	
+ 					</div>
+ 				
+				<div class="form-group row">
+					<div class="form-group">
+						<label class="control-label">Photo:</label>
+						<input type="file" name="file" class="form-control" />
+               		</div>
+               	</div>
+               		
+					<div>
+						<button type="submit" class="btn btn-success">Enregistrer</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	
+</body>
+</html>
