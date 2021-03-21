@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/Layout">
+<head>
+    <meta charset="utf-8">
+    <title>Page Layout</title>
+    <link rel="stylesheet" type="text/css"
+          href="/webjars/bootstrap/css/bootstrap.min.css" />
+</head>
+<body>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">WebSiteName</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li class="active"><a th:href="@{/CandidatProfile}">Information</a></li>
+                <li><a th:href="@{/CandidatExperiences}">Experience</a></li>
+                <li><a th:href="@{/CandidatFormations}">Formation</a></li>
+                <li><a th:href="@{/CandidatCompetences}">Competence</a></li>
+                <li><a th:href="@{/CandidatLangues}">Langue</a></li>
+            </ul>
+        </div>
+    </nav>
+<section layout:fragment="content1">
+</section>
+<footer>
+    FOOTER
+</footer>
+<script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+<script type="text/javascript"
+        src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>

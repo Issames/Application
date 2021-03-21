@@ -1,5 +1,6 @@
 package org.application.web;
 
+
 import org.application.entities.Recruteur;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -23,6 +24,7 @@ public class MainController {
 		model.addAttribute("recruteur", new Recruteur());
 		return "recruteur/Recreteur";
 	}
+
 	
 
 }
