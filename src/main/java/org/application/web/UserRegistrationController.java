@@ -1,5 +1,6 @@
 package org.application.web;
 
+import org.application.entities.User;
 import org.application.service.UserService;
 import org.application.web.dto.UserRegistrationDto;
 import org.springframework.stereotype.Controller;
@@ -28,6 +29,7 @@ public class UserRegistrationController {
 		model.addAttribute("user", new UserRegistrationDto());
 		return "registration";
 	}
+
 	@PostMapping
 	public String registerUserAccount(@ModelAttribute("user") UserRegistrationDto registrationDto) {
 		userService.save(registrationDto);

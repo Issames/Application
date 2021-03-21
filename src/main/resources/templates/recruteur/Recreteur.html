@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Completer Votre Profile</title>
+<link rel="stylesheet" 
+href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
+integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" 
+crossorigin="anonymous">
+<link rel = "stylesheet" type = "text/css" href="/webjars/bootstrap/css/bootstrap.min.css"/>
+
+</head>
+<body>
+			
+	<div class = "container text-center">
+		<div>
+					<h1>Bienvenu </h1>
+		</div>
+		
+		 
+			<form th:action="@{/save_recruiter}" method="post" th:object="${recruteur}" enctype="multipart/form-data">
+	<!-- Recupérer User id  -->
+				<!-- <input name="id_user" id="id_user" type="hidden" th:value="${param.id}" > -->
+				 
+									 <div class="container">
+									
+								<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 " >
+									<div class="card h-100">
+										<div class="card-body">
+											<div class="row gutters">
+												<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+													<h6 class="mb-3 text-primary">Societé Details</h6>
+										</div>
+										<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+											<div class="form-group">
+												<label for="fullName">Nom de societé</label>
+												<input type="text" class="form-control" id="company_name" th:field ="*{company_name}" placeholder="Saisire le Nom de la societé">
+											</div>
+										</div>
+										<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+											<div class="form-group">
+												<label for="eMail">Specialité</label>
+												<input type="text" class="form-control" id="company_speciality" th:field="*{company_speciality}" placeholder="Saisire la Specialité">
+											</div>
+										</div>
+										<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+											<div class="form-group">
+												<label for="phone">Site Internet : URL</label>
+												<input type="text" class="form-control" id="phone" th:field="*{company_url}" placeholder="saisire votre site internet">
+											</div>
+										</div>
+										
+									</div>
+									<div class="row gutters">
+										<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+											<h6 class="mb-3 text-primary">Cordonées</h6>
+										</div>
+										<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+										<div class="form-group">
+												<label for="website">Prénom</label>
+												<input type="text" class="form-control" id="recruiter_firstname" th:field="*{recruteur_firstname}" placeholder="Saisire votre prénom">
+											</div>
+											
+											
+										</div>
+										<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+											<div class="form-group">
+												<label for="website">Nom</label>
+												<input type="text" class="form-control" id="recruiter_lastname" th:field="*{recruteur_lastname}" placeholder="Saisire votre nom">
+											</div>
+										</div>
+										<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+											<div class="form-group">
+												<label for="sTate">Telephone</label>
+												<input type="text" class="form-control" id="recruiter_phone" th:field="*{recruteur_phone}" placeholder="Saisire votre num ">
+											</div>
+										</div>
+										<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+											<div class="form-group">
+												<label class="control-label">Photo:</label>
+											<input type="file" name="file" class="form-control-file" />
+											</div>
+										</div>
+									</div>
+									<div class="row gutters">
+										<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+											<div class="text-right">
+												
+												<button type="submit" id="submit" name="submit" class="btn btn-primary">Enregistrer</button>
+											</div>
+										</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						</div>
+									 
+				 
+				 
+				<!--  -->
+				  
+				
+			</form>
+		</div>
+
+</body>
+
+</html>

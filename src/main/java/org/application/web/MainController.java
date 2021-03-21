@@ -21,7 +21,7 @@ public class MainController {
 	@GetMapping("/RecruteurProfile")
 	public String showRecruteur(Model model) {
 		model.addAttribute("recruteur", new Recruteur());
-		return "recruteur/RecruteurProfile";
+		return "recruteur/Recreteur";
 	}
 	
 
