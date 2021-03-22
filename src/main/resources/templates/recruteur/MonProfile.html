@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
+    <link rel="stylesheet" 
+href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
+integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" 
+crossorigin="anonymous"> 
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons">
+    <link rel="stylesgeet" href="https://rawgit.com/creativetimofficial/material-kit/master/assets/css/material-kit.css">
+</head>
+
+<body class="profile-page">
+<form  method="get" 
+th:object="${recruteur}" enctype="multipart/form-data">
+   
+    
+    <div class="page-header header-filter" data-parallax="true" style="background-image:url('http://wallpapere.org/wp-content/uploads/2012/02/black-and-white-city-night.png');"></div>
+    
+            <div class="container">
+                <div class="row">
+	                <div class="col-md-12 ml-auto mr-auto">
+        	           <div class="profile">
+	                        <div class="avatar text-center">
+	                            <img th:src="|data:image/png;base64,${recruteur.photo}|" alt="Profile Image" class="img-raised rounded-circle img-fluid">
+	                        </div>
+	                        <div class="name">
+	                            <h3 class="title" th:text="${recruteur.company_name}"></h3>
+								<h6 class="label label-primary" th:text="${recruteur.company_speciality}"></h6>
+								</div>
+	                    </div>
+    	            </div>
+                </div>
+                </br>
+               
+				<div class="row">
+					<div class="col-md-6 col-lg-6 col-sm-6">
+                        <span class="label label-info" >Phone :</span> <span th:text="${recruteur.recruteur_phone}"></span></br>
+                        <span class="label label-info" >Site Web :</span>    <a th:text="${recruteur.company_url}"></a>
+          	    	</div>
+    	    	<div class="col-md-6 col-lg-6 col-sm-6">
+                         <span class="label label-info" >Nom    :</span>   <span th:text="${recruteur.recruteur_firstname}"></span></br>
+                         <span class="label label-info" >Prenom :</span>   <span th:text="${recruteur.recruteur_lastname}"></span>
+    	    	</div>
+            </div>
+        
+          
+            
+
+        
+            </div>
+        
+	
+	
+  
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js" integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js" integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9" crossorigin="anonymous"></script>
+
+
+   
+
+</body>
+<style>
+
+
+.h6, h6 {
+    font-size: .75rem !important;
+    font-weight: 500;
+    font-family: Roboto,Helvetica,Arial,sans-serif;
+    line-height: 1.5em;
+    text-transform: uppercase;
+}
+
+.name h6 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.profile-page .page-header {
+
+    background-position:center;
+}
+
+
+
+.profile-page .profile {
+    text-align: center;
+}
+
+.profile-page .profile img {
+    max-width: 160px;
+    width: 100%;
+    margin: 0 auto;
+    
+}
+
+.img-raised {
+    box-shadow: 0 5px 15px -8px rgba(0,0,0,.24), 0 8px 10px -5px rgba(0,0,0,.2);
+}
+
+.rounded-circle {
+    border-radius: 50%!important;
+}
+
+
+.title {
+    margin-top: 30px;
+    margin-bottom: 25px;
+    min-height: 32px;
+    color: #3C4858;
+    font-weight: 700;
+    font-family: "Roboto Slab","Times New Roman",serif;
+}
+
+
+
+
+</style>
+
+</html>

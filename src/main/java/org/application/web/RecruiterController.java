@@ -24,7 +24,7 @@ public class RecruiterController {
 	
 	@PostMapping("/save_recruiter")
 	public ModelAndView saveRecruiterToDB(@ModelAttribute MultipartFile file,String company_name, String company_speciality, 
-			String recruteur_phone, String company_url, String recruteur_firstname, String recruteur_lastname/*,@RequestParam(name = "id_user") Long id_user*/) {
+		String recruteur_phone, String company_url, String recruteur_firstname, String recruteur_lastname/*,@RequestParam(name = "id_user") Long id_user*/) {
 		
 		Recruteur r = new Recruteur();
 		
@@ -46,12 +46,15 @@ public class RecruiterController {
 		r.setRecruteur_phone(recruteur_phone);
 		r.setRecruteur_firstname(recruteur_firstname);
 		r.setRecruteur_lastname(recruteur_lastname);
-		/*r.setIdUser(id_user);*/
+		//r.setIdUser(id_user);
 		
 		recruiterRepository.save(r);
 		//return "recruiter/index";
-		ModelAndView mav = new ModelAndView("recruteur/index");
+		ModelAndView mav = new ModelAndView("recruteur/MonProfile");
         mav.addObject("recruteur", r);
         return mav;
 	}
+		
+	
+	
 }

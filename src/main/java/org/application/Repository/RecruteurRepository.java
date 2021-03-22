@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 @Service
 public interface RecruteurRepository extends JpaRepository<Recruteur, Long> {
 
+	
 }
 
 
