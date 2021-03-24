@@ -16,7 +16,6 @@ crossorigin="anonymous">
 th:object="${recruteur}" enctype="multipart/form-data">
    
     
-    <div class="page-header header-filter" data-parallax="true" style="background-image:url('http://wallpapere.org/wp-content/uploads/2012/02/black-and-white-city-night.png');"></div>
     
             <div class="container">
                 <div class="row">
@@ -33,19 +32,29 @@ th:object="${recruteur}" enctype="multipart/form-data">
     	            </div>
                 </div>
                 </br>
+               <div class="row">
                
-				<div class="row">
-					<div class="col-md-6 col-lg-6 col-sm-6">
-                        <span class="label label-info" >Phone :</span> <span th:text="${recruteur.recruteur_phone}"></span></br>
-                        <span class="label label-info" >Site Web :</span>    <a th:text="${recruteur.company_url}"></a>
-          	    	</div>
-    	    	<div class="col-md-6 col-lg-6 col-sm-6">
-                         <span class="label label-info" >Nom    :</span>   <span th:text="${recruteur.recruteur_firstname}"></span></br>
-                         <span class="label label-info" >Prenom :</span>   <span th:text="${recruteur.recruteur_lastname}"></span>
-    	    	</div>
-            </div>
-        
-          
+              
+				
+				        <div class="panel panel-primary">
+							  <div class="panel-heading">Info societé</div>
+							  <div class="panel-body">
+							   <span class="label label-info" >Phone :</span> <span th:text="${recruteur.recruteur_phone}"></span>
+                        		<span class="label label-info" >Site Web :</span>    <a th:text="${recruteur.company_url}"></a>
+							  </div>
+							</div>
+							
+							<div class="panel panel-primary">
+							  <div class="panel-heading">
+							    <h3 class="panel-title">Vos info</h3>
+							  </div>
+							  <div class="panel-body">
+							    <span class="label label-info" >Nom    :</span>   <span th:text="${recruteur.recruteur_firstname}"></span>
+                      		   <span class="label label-info" >Prenom :</span>   <span th:text="${recruteur.recruteur_lastname}"></span>
+				  
+							  </div>
+							</div>
+        						  <a href="#" class="btn btn-default ">Modifier</a>
             
 
         
@@ -79,10 +88,6 @@ th:object="${recruteur}" enctype="multipart/form-data">
     margin-bottom: 10px;
 }
 
-.profile-page .page-header {
-
-    background-position:center;
-}
 
 
 
@@ -107,8 +112,7 @@ th:object="${recruteur}" enctype="multipart/form-data">
 
 
 .title {
-    margin-top: 30px;
-    margin-bottom: 25px;
+    
     min-height: 32px;
     color: #3C4858;
     font-weight: 700;

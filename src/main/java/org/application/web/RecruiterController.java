@@ -41,7 +41,7 @@ public class RecruiterController {
 		
 		r.setCompany_name(company_name);
 		r.setCompany_speciality(company_speciality);
-		r.setCompany_speciality(company_speciality);
+		//r.setCompany_speciality(company_speciality);
 		r.setCompany_url(company_url);
 		r.setRecruteur_phone(recruteur_phone);
 		r.setRecruteur_firstname(recruteur_firstname);
