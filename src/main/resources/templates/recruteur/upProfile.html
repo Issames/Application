@@ -12,17 +12,17 @@ crossorigin="anonymous">
 </head>
 
 <body class="profile-page">
-<form  method="get" 
+<form  method="post" th:action="@{'/modifier?id=' + ${recruteur.id}}"
 th:object="${recruteur}" enctype="multipart/form-data">
    
     
     
             <div class="container">
-                <div class="row">
+              <!--   <div class="row">
 	                <div class="col-md-12 ml-auto mr-auto">
         	           <div class="profile">
 	                        <div class="avatar text-center">
-	                            <img th:src="|data:image/png;base64,${recruteur.photo}|" alt="Profile Image" class="img-raised rounded-circle img-fluid">
+	                            <img th:src="|data:image/png;base64,${recruteur.photo}|" alt="Profile Image" class="img-raised rounded-circle img-fluid" th:name="photo" >
 	                        </div>
 	                        <div class="name">
 	                            <h3 class="title" th:text="${recruteur.company_name}"></h3>
@@ -34,30 +34,32 @@ th:object="${recruteur}" enctype="multipart/form-data">
                 </br>
                <div class="row">
                
-              
+               -->
 				
-				        <div class="panel panel-primary">
+				         <div class="panel panel-primary">
 							  <div class="panel-heading">Info societé</div>
 							  <div class="panel-body">
-							   <span class="label label-info" >Phone :</span> <span th:text="${recruteur.recruteur_phone}"></span>
-                        		<span class="label label-info" >Site Web :</span>    <a th:text="${recruteur.company_url}"></a>
+							   <span class="label label-info" >Phone :</span> 
+							   <input type="text" th:field="*{recruteur_phone}" th:value="${recruteur.recruteur_phone}">
+                        		<span class="label label-info" >Site Web :</span>   
+                        		<input type="text" th:field="*{company_url}" th:value="${recruteur.company_url}">
 							  </div>
 							</div>
-							
+							 
 							<div class="panel panel-primary">
 							  <div class="panel-heading">
 							    <h3 class="panel-title">Vos info</h3>
 							  </div>
 							  <div class="panel-body">
-							    <span class="label label-info" >Nom    :</span>   <span th:text="${recruteur.recruteur_firstname}"></span>
-                      		   <span class="label label-info" >Prenom :</span>   <span th:text="${recruteur.recruteur_lastname}"></span>
+							    <span class="label label-info" >Nom    :</span>  <input type="text" th:field="*{recruteur_firstname}" th:value="${recruteur.recruteur_firstname}" >
+                      		   <span class="label label-info" >Prenom :</span> <input type="text" th:field="*{recruteur_lastname}" th:value="${recruteur.recruteur_lastname}">   
 				  
 							  </div>
 							</div>
         						  
-        						<!--    <a class="btn btn-default " th:href="@{/modifierForm}">Modifier</a> -->
-        						 <input type="hidden" th:value="${recruteur.id}" name="id">
-        						 <a class="btn btn-default " th:href="@{'/modifierForm?id=' + ${recruteur.id}}">Modifier</a>
+        					<input type="hidden" th:value="${recruteur.id}" name="id">
+        					 <!-- <a class="btn btn-success " th:href="@{'/modifier?id=' + ${recruteur.id}}">Enregistrer</a> -->
+        					 <button class="btn btn-success " type="submit">Enregitrer</button> 
             
 
         
@@ -126,5 +128,7 @@ th:object="${recruteur}" enctype="multipart/form-data">
 
 
 </style>
+
+
 
 </html>

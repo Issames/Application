@@ -24,7 +24,7 @@ crossorigin="anonymous">
 				<table style="width:200%; table-layout: fixed; color:white">
 				<tr>
 				<td>
-				<a class="navbar-brand" href="#" th:href="@{/}">Redirection Page</a>
+				<a class="navbar-brand" href="#"  th:href="@{/profile}">Mon profile</a>
 				</td>
 				<td>
 <!-- 				//<span sec:authentication="principal.username">User</span> -->
@@ -45,18 +45,33 @@ crossorigin="anonymous">
 		<br>
 		
 		<div class = "container">
-			<h1>We are happy that you're here</h1>
+			<h1 class="text-center">Pouvez vous nous dire quel est votre intérêt ?</h1>
 			
-			<table style="width:100%; table-layout: fixed;">
-				<tr>
-					<td><h4><a th:href="@{/candidatProfile}">Complete Registration</a></h4>
-					</td>
-					<td><h4><a th:href="@{/RecruteurProfile}">Recruiter</a></h4>
-					</td>
-				</tr>
+			
+		<div class="row">
+			
+			<div class="col-lg-6 col-md-6 col-sm-12">
+				<div class="card" style="width: 18rem;">
+				  <img src="https://cdn.shortpixel.ai/client/q_lossless,ret_img/https://www.myrhline.com/wp-content/uploads/2018/07/Fotolia_201760406_S.jpg" style="width: 300px ; height:200px;" class="card-img-top" alt="...">
+				  <div class="card-body">
+				    <h5 class="card-title text-primary text-center">Recruteur</h5>
+				    <p class="card-text">Continuer au tant que recruteur et lancer vos offres dés maintenant.</p>
+				    <a th:href="@{/RecruteurProfile}" class="btn btn-primary">Vas y !</a>
+				  </div>
+				</div>
+			</div>
+			<div class="col-lg-6 col-md-6 col-sm-12">
+				<div class="card" style="width: 18rem;">
+				  <img src="https://www.monster.fr/recruter/conseil-en-ressources-humaines/empres-resources/uploads/sites/13/2019/05/40e06c83de37904146a9b2f979a390a2.jpg" style="width: 300px ; height:200px;" class="card-img-top" alt="...">
+				  <div class="card-body">
+				    <h5 class="card-title text-warning text-center">Candidat</h5>
+				    <p class="card-text">Continuer au tant que candidat et chercher les meilleurs offres convenable a votre specialté.</p>
+				    <a th:href="@{/CandidatProfile}" class="btn btn-warning">Vas y !</a>
+				  </div>
+				</div>
+			</div>
+		</div>
 				
-			</table>
-		
 		</div>
 
 </body>
