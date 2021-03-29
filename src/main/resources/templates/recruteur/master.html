@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+</head>
+<body>
+    <header th:fragment="header">
+        <h1>Welcome</h1>
+    </header>
+    
+		    <nav class="navbar navbar-inverse" th:fragment="menu">
+			  <div class="container-fluid">
+			    <div class="navbar-header">
+			      <a class="navbar-brand" href="#">Find Job</a>
+			    </div>
+			    <ul class="nav navbar-nav">
+			      <li class="active"><a href="#">Acceuil</a></li>
+			      <li><a >Mon profile</a></li>
+			      <li><a href="#">Mes offres</a></li>
+			      </li>
+			    </ul>
+			  </div>
+			</nav>
+    
+
+    
+    <footer th:fragment="footer">
+        <p>&copy; 2021 findjob.com</p>
+    </footer>
+</body>
+</html>

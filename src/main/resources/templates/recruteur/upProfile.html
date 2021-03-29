@@ -15,7 +15,7 @@ crossorigin="anonymous">
 <form  method="post" th:action="@{'/modifier?id=' + ${recruteur.id}}"
 th:object="${recruteur}" enctype="multipart/form-data">
    
-    
+    <div th:insert="recruteur/master :: nav"></div>
     
             <div class="container">
               <!--   <div class="row">
@@ -67,7 +67,7 @@ th:object="${recruteur}" enctype="multipart/form-data">
         
 	
 	
-  
+ 
   <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js" integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U" crossorigin="anonymous"></script>
