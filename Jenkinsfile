@@ -14,3 +14,4 @@ node{
     Alert!!!!''', cc: '', from: '', replyTo: '', subject: 'Jenkins Jobs', to: 'Mus.jenkins112@gmail.com'
     
  }
+}
