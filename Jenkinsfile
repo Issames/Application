@@ -11,7 +11,7 @@ node{
     }
   stage('mail Notification'){
     mail bcc: '', body: '''Jenkins Alert !!!!
-    Alert!!!!''', cc: '', from: '', replyTo: '', subject: 'Jenkins Jobs', to: 'Mus.jenkins112@gmail.com,marocoujdamouad@gmail.com,issame.lamchabrag@uit.ac.ma'
+    Alert!!!!''', cc: '', from: '', replyTo: '', subject: 'Jenkins Jobs', to: 'marocoujdamouad@gmail.com,issame.lamchabrag@uit.ac.ma'
     
  }
 }
