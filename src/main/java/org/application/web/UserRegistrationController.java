@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 @RequestMapping("/registration")
@@ -30,10 +31,21 @@ public class UserRegistrationController {
 		return "registration";
 	}
 
-	@PostMapping
+	/*@PostMapping
 	public String registerUserAccount(@ModelAttribute("user") UserRegistrationDto registrationDto) {
 		userService.save(registrationDto);
-		return "redirect:/registration?success";
+		String email = registrationDto.getEmail()
+		return "redirect:/";
+	}*/
+	@PostMapping
+	public ModelAndView registerUserAccount(@ModelAttribute("user") UserRegistrationDto registrationDto) {
+		userService.save(registrationDto);
+		String email = registrationDto.getEmail();
+		String nom = registrationDto.getFirstName();
+		ModelAndView mav = new ModelAndView("index");
+        mav.addObject("email", email);
+        mav.addObject("nom", nom);
+        return mav;
 	}
 	
 }

@@ -43,8 +43,9 @@ crossorigin="anonymous">
 		</nav>
 		<br>
 		<br>
-		
+		<input type="hidden" th:value="${email}"  th:field="*{email}"  name="email">
 		<div class = "container">
+			<h1 class="text-center">Bonjour <label th:text="${nom}"></label></h1>
 			<h1 class="text-center">Pouvez vous nous dire quel est votre intérêt ?</h1>
 			
 			

@@ -1,0 +1,41 @@
+
+version: '3'
+
+services:
+    
+    #service 1: database
+    db:
+      image: mysql:latest
+      hostname: db
+      container_name: db
+      environment:
+        MYSQL_DATABASE: 'Registeration'
+        MYSQL_USER: 'mouad'
+        MYSQL_PASSWORD: 'root'
+        MYSQL_ROOT_PASSWORD: 'root'
+      ports:
+        - "3306:3306"
+      restart: always
+      
+    
+    
+    #service 2 : image de l'application
+    musapp:                        
+      image: mus               #nom de l'image 
+      container_name: mus-app  #Nom du conteneur 
+      build:
+        context: .                          #docker location
+        dockerfile: Dockerfile              
+      ports:
+        - "8079:8078"   
+      links:
+      - db:db
+      environment: #les varriables d'environement spring
+        SPRING_DATASOURCE_URL: jdbc:mysql://db:3306/Registeration?useSSL=false
+        SPRING_DATASOURCE_USERNAME: mouad
+        SPRING_DATASOURCE_PASSWORD: root                
+      restart: always
+        
+      depends_on:                           
+        - db                                #Cette image depend de l'image precedente de la base de données
+      

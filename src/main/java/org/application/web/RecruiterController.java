@@ -58,15 +58,7 @@ public class RecruiterController {
         return mav;
 	}
 	
-/*	@GetMapping("/profile")
-	public ModelAndView getProfile(@RequestParam("id")  Long id)
-	{
-		Recruteur recFromDb = recruiterRepository.findById(id).get();
-		ModelAndView mav = new ModelAndView("recruteur/MonProfile");
-        mav.addObject("recruteur", recFromDb);
-        return mav;
-	}
-*/	
+	
 	@GetMapping("/modifierForm")
 	public ModelAndView getProfileForm(@RequestParam("id")  Long id)
 	{
