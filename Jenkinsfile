@@ -10,6 +10,6 @@ node{
 
       sh  "${mvnHome}/bin/mvn package"
     }
-  }catch(err) {
+  }catch (err) {
     emailext body: "$(err)", subject: 'Failure', to: 'issame.lamchabrag@uit.ac.ma'
 }
