@@ -6,9 +6,8 @@ node{
   }
     stage('Compile-Package'){
       // Maven home path
-      def mvnHomes = tool name: 'maven-3.6.3', type: 'maven'
-
-      sh  "${mvnHome}/bin/fmvn package"
+      sh 'mvn clean package'
+      
     }
   }catch (err) {
     emailext body: "${err}", subject: 'Failure', to: 'issame.lamchabrag@uit.ac.ma'
