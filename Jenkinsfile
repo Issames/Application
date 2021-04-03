@@ -12,6 +12,7 @@ node{
       
     }
   }catch (err) {
-    emailext body: "${err}", subject: 'Failure', to: 'issame.lamchabrag@uit.ac.ma'
+    mail bcc:'', body: "${err}", subject: 'Failure', to: 'issame.lamchabrag@uit.ac.ma'
+    
   }
 }
