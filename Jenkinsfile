@@ -15,7 +15,7 @@ node{
     Alert!!!!''', cc: '', from: '', replyTo: '', subject: 'starting jenkins', to: 'issame.lamchabrag@uit.ac.ma'
     
  }
-  }catchError(err){
+  }catchError{
     emailext body: "${err}", subject: 'Failure', to:'issame.lamchabrag@uit.ac.ma'
 }
 }
