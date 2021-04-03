@@ -12,7 +12,7 @@ node{
     }
   stage('mail Notification'){
     mail bcc: '', body: '''Jenkins Alert !!!!
-    Alert!!!!''', cc: '', from: '', replyTo: '', subject: 'starting jenkins', to: 'mouad.alouan@uit.ac.ma,issame.lamchabrag@uit.ac.ma,mohammed.zidan@uit.ac.ma'
+    Alert!!!!''', cc: '', from: '', replyTo: '', subject: 'starting jenkins', to: 'issame.lamchabrag@uit.ac.ma'
     
  }
   }catch(err){
