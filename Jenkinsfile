@@ -1,4 +1,5 @@
 node{
+  try{
   stage('SCM chekout'){
     
       git branch: 'main', url: 'https://github.com/Issames/Application.git'
@@ -7,11 +8,13 @@ node{
       // Maven home path
       def mvnHome = tool name: 'maven-3.6.3', type: 'maven'
 
-      bat  "${mvnHome}/bin/mvn package"
+      sh  "${mvnHome}/bin/mvn packages"
     }
   stage('mail Notification'){
     mail bcc: '', body: '''Jenkins Alert !!!!
-    Alert!!!!''', cc: '', from: '', replyTo: '', subject: 'Jenkins Jobs', to: 'mouad.alouan@uit.ac.ma,issame.lamchabrag@uit.ac.ma,mohammed.zidan@uit.ac.ma'
+    Alert!!!!''', cc: '', from: '', replyTo: '', subject: 'starting jenkins', to: 'mouad.alouan@uit.ac.ma,issame.lamchabrag@uit.ac.ma,mohammed.zidan@uit.ac.ma'
     
  }
+  }catch(err){
+    emailext body: "${err}", subject:'Failure',to:'issame.lamchabrag@uit.ac.ma'
 }
