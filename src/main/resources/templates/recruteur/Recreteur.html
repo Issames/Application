@@ -20,8 +20,8 @@ crossorigin="anonymous">
 		 
 			<form th:action="@{/save_recruiter}" method="post" th:object="${recruteur}" enctype="multipart/form-data">
 	<!-- Recupérer User id  -->
-				<!-- <input name="id_user" id="id_user" type="hidden" th:value="${param.id}" > -->
-				 
+				<input name="email_user" id="email_user" type="hidden" th:value="${param.email}" > 
+				 <!-- -->
 									 <div class="container">
 								<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 " >
 									<div class="card h-100">

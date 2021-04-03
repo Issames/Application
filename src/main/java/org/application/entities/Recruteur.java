@@ -1,6 +1,9 @@
 package org.application.entities;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -41,7 +44,18 @@ public class Recruteur  implements Serializable  {
 	@Column(columnDefinition = "LONGBLOB")
 	private String photo;
 	
+	@OneToMany(mappedBy = "recruteur", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private List<Offre> listOffres = new ArrayList<Offre>();
 	
+	public List<Offre> getListOffres() {
+		return listOffres;
+	}
+	public void setListOffres(List<Offre> listOffres) {
+		this.listOffres = listOffres;
+        listOffres.forEach(entity -> entity.setRecruteur(this));
+
+        
+	}
 	public String getPhoto() {
 		return photo;
 	}
@@ -50,19 +64,19 @@ public class Recruteur  implements Serializable  {
 	}
 	/*@OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "user_id", referencedColumnName = "id")*/
-    private Long id_user;
+    private String email_user;
     
     //private Collection<Offre> offers;
 
 	
 	
 	
-	public Long getIdUser() {
-		return id_user;
+	public String getEmailUser() {
+		return email_user;
 	}
-	public void setIdUser(Long id_user) {
+	public void setEmailUser(String email_user) {
 		
-		this.id_user=id_user;
+		this.email_user=email_user;
 		
 	    
 		

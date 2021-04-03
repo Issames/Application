@@ -21,6 +21,9 @@ th:object="${recruteur}" enctype="multipart/form-data">
             <div class="container">
                 <div class="row">
 	                <div class="col-md-12 ml-auto mr-auto">
+	                
+	               <!--  <a class="btn btn-success btn-lg float-right" th:href="@{'/offre?id=' + ${recruteur.id}}">+</a> -->
+	                <a class="btn btn-success btn-lg float-right" th:href="@{offre}">+</a>
         	           <div class="profile">
 	                        <div class="avatar text-center">
 	                            <img th:src="|data:image/png;base64,${recruteur.photo}|" alt="Profile Image" class="img-raised rounded-circle img-fluid">

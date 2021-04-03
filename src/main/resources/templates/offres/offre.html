@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Crée offre</title>
+<link rel="stylesheet" 
+href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
+integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" 
+crossorigin="anonymous">
+<link rel = "stylesheet" type = "text/css" href="/webjars/bootstrap/css/bootstrap.min.css"/>
+
+</head>
+<body>
+<div th:insert="recruteur/master :: nav"></div>
+<header class="header">
+    <h1 class="header__title">Crée Votre offre !</h1>
+</header>
+<div class="container">
+
+<div class="col-lg-10 col-md-10 col-sm-12">
+     <form th:action="@{/save_offre}" method="post"
+                      th:object="${offre}">
+                      <h3 class="text-primary">Informations Offre</h3>
+  <div class="form-row">
+    <div class="col">
+      <input type="text" class="form-control border border-primary" placeholder="Intitulé du poste" th:field ="*{Poste}">
+    </div>
+    <div class="col">
+      <input type="date" class="form-control border border-primary m-5 pb-5" placeholder="Date debut" th:field="*{DateCeation}">
+    </div>
+    <div class="col">
+    <textarea class="form-control border border-primary m-5 pb-5" aria-label="Description"  th:field ="*{Description}"></textarea>
+    </div>
+     <div class="form-row mt-4 ">
+              <button type="submit" class="btn btn-primary pull-right">sauvgarder</button>
+       </div>
+  </div>
+</form>
+ </div>
+  </div>      
+</body>
+</html>

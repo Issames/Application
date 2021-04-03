@@ -30,7 +30,7 @@ crossorigin="anonymous">
 <!-- 				//<span sec:authentication="principal.username">User</span> -->
 				<div id="navbar" class="collapse navbar-collapse">
 					<ul class="nav navbar-nav">
-						<li sec:authorize="isAuthenticated()"><a th:href = "@{/logout}">logout</a>
+						<li sec:authorize="isAuthenticated()"><a th:href = "@{/logout}" class=" text-danger">logout</a>
 					</ul>
 				
 				</div>
@@ -43,7 +43,7 @@ crossorigin="anonymous">
 		</nav>
 		<br>
 		<br>
-		<input type="hidden" th:value="${email}"  th:field="*{email}"  name="email">
+		
 		<div class = "container">
 			<h1 class="text-center">Bonjour <label th:text="${nom}"></label></h1>
 			<h1 class="text-center">Pouvez vous nous dire quel est votre intérêt ?</h1>
@@ -53,7 +53,7 @@ crossorigin="anonymous">
 			
 			<div class="col-lg-6 col-md-6 col-sm-12">
 				<div class="card" style="width: 18rem;">
-				  <img th:src="@{/images/recruteur.jpg}" style="width: 300px ; height:200px;" class="card-img-top" alt="...">
+				  <img src="https://cdn.shortpixel.ai/client/q_lossless,ret_img/https://www.myrhline.com/wp-content/uploads/2018/07/Fotolia_201760406_S.jpg" style="width: 300px ; height:200px;" class="card-img-top" alt="...">
 				  <div class="card-body">
 				    <h5 class="card-title text-primary text-center">Recruteur</h5>
 				    <p class="card-text">Continuer au tant que recruteur et lancer vos offres dés maintenant.</p>
@@ -63,7 +63,7 @@ crossorigin="anonymous">
 			</div>
 			<div class="col-lg-6 col-md-6 col-sm-12">
 				<div class="card" style="width: 18rem;">
-				  <img th:src="@{/images/candidat.jpg}" style="width: 300px ; height:200px;" class="card-img-top" alt="...">
+				  <img src="https://www.monster.fr/recruter/conseil-en-ressources-humaines/empres-resources/uploads/sites/13/2019/05/40e06c83de37904146a9b2f979a390a2.jpg" style="width: 300px ; height:200px;" class="card-img-top" alt="...">
 				  <div class="card-body">
 				    <h5 class="card-title text-warning text-center">Candidat</h5>
 				    <p class="card-text">Continuer au tant que candidat et chercher les meilleurs offres convenable a votre specialté.</p>

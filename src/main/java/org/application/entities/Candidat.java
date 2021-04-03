@@ -58,7 +58,7 @@ public class Candidat implements Serializable {
 
     @OneToMany(mappedBy = "candidat", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List<Experience> listExperiences = new ArrayList<Experience>();
-    @OneToMany(mappedBy = "candidat", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "candidat", fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Formation> listFormations = new ArrayList<Formation>();
     @OneToMany(mappedBy = "candidat", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List<Langue> listLangues = new ArrayList<Langue>();
