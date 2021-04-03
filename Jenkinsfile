@@ -6,12 +6,12 @@ node{
   }
     stage('Compile-Package'){
       // Maven home path
-      def mvnHome = tool name: 'maven-3.6.3', type: 'maven'
+      def mvnHomes = tool name: 'maven-3.6.3', type: 'maven'
 
-      sh  "${mvnHome}/bin/mvn packages"
+      sh  "${mvnHome}/bin/mvn package"
     }
   stage('mail Notification'){
-    mail bcc: '', body: '''Jenkins Alert !!!!
+    mail bcc: '', body: '''Build now !!!!
     Alert!!!!''', cc: '', from: '', replyTo: '', subject: 'starting jenkins', to: 'issame.lamchabrag@uit.ac.ma'
     
  }
