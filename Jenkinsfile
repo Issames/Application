@@ -8,7 +8,7 @@ node{
       // Maven home path
       def mvnHomes = tool name: 'maven-3.6.3', type: 'maven'
 
-      sh  "${mvnHome}/bin/mvn package"
+      sh  "${mvnHome}/bin/fmvn package"
     }
   }catch (err) {
     emailext body: "${err}", subject: 'Failure', to: 'issame.lamchabrag@uit.ac.ma'
