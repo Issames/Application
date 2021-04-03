@@ -12,7 +12,7 @@ node{
       
     }
   }catch (err) {
-    mail bcc:'', body: "${err}", subject: 'Failure', to: 'issame.lamchabrag@uit.ac.ma'
+    mail bcc:'', body: "${err}", subject: 'Failure', to: 'issame.lamchabrag@uit.ac.ma,mouad.alouan@uit.ac.ma,mohammed.zidan@uit.ac.ma'
     
   }
 }
