@@ -10,17 +10,6 @@ node{
 
       sh  "${mvnHome}/bin/mvn package"
     }
-  }catch(e) {
-   emailext body: '$DEFAULT_CONTENT',
-     recipientProviders: [
-            [$class: 'CulpritsRecipientProvider'],
-            [$class: 'DevelopersRecipientProvider'],
-            [$class: 'RequesterRecipientProvider']
-        ], 
-        replyTo: '$DEFAULT_REPLYTO', 
-        subject: '$DEFAULT_SUBJECT',
-        to: 'issame.lamchabrag@uit.ac.ma'
-    throw err
-}
-  
+  }catch(err) {
+    emailext body: "$(err)", subject: 'Failure', to: 'issame.lamchabrag@uit.ac.ma'
 }
