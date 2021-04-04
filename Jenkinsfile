@@ -1,4 +1,3 @@
-properties([pipelineTriggers([githubPush()])])
 node{
   try{
   stage('SCM chekout'){
@@ -7,13 +6,13 @@ node{
   }
     stage('Compile-Package'){
       // Maven home path
-      def mvnHomes = tool name: 'maven-3.6.3', type: 'mavenq'
+      def mvnHomes = tool name: 'maven-3.6.3', type: 'maven'
 
       sh  "${mvnHome}/bin/mvn package"
       
     }
   }catch (err) {
-    mail bcc:'', body: "${err}", subject: 'Failure', to: 'issame.lamchabrag@uit.ac.ma,mouad.alouan@uit.ac.ma,mohammed.zidan@uit.ac.ma'
+    emailext bcc:'', body: "${err}", subject: 'Failure', to: 'issame.lamchabrag@uit.ac.ma,mouad.alouan@uit.ac.ma,mohammed.zidan@uit.ac.ma'
     
   }
 }
