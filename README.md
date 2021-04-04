@@ -19,4 +19,6 @@ docker image ls
 to run the app, run :
 ```
 docker run -d -p 4000:80 Application
+
+T1T
 ```
